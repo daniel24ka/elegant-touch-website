@@ -1751,6 +1751,67 @@ img { max-width: 100%; display: block; }
     .contact-form-wrapper { padding: 24px; }
 }
 
+/* === Service Areas Section === */
+.areas-section {
+    background: var(--dark-bg);
+}
+
+.areas-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.area-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    border-radius: 12px;
+    padding: 24px 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.area-item:hover {
+    background: rgba(212, 175, 55, 0.08);
+    border-color: rgba(212, 175, 55, 0.4);
+    transform: translateY(-4px);
+}
+
+.area-item i {
+    color: var(--gold);
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+}
+
+.area-item h3 {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-family: 'Heebo', sans-serif;
+}
+
+.area-item p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+@media (max-width: 992px) {
+    .areas-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .areas-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .area-item { padding: 18px 14px; }
+}
+
+@media (max-width: 480px) {
+    .areas-grid { grid-template-columns: 1fr; }
+}
+
 /* === Print Styles === */
 @media print {
     .header, .whatsapp-float, .back-to-top, .hero-bg-particles,
