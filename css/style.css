@@ -1751,6 +1751,371 @@ img { max-width: 100%; display: block; }
     .contact-form-wrapper { padding: 24px; }
 }
 
+/* === Before/After Slider === */
+.before-after-section {
+    background: var(--dark-3);
+}
+
+.ba-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.ba-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius);
+    border: 1px solid rgba(212,175,55,0.2);
+    aspect-ratio: 700/450;
+}
+
+.ba-after, .ba-before {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.ba-after {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.ba-before-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 2;
+    border-right: 3px solid var(--gold);
+}
+
+.ba-before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    max-width: none;
+}
+
+.ba-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: col-resize;
+    z-index: 5;
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.ba-handle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 44px;
+    height: 44px;
+    background: var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--dark);
+    font-size: 1rem;
+    z-index: 4;
+    pointer-events: none;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    transition: transform 0.15s ease;
+}
+
+.ba-container:active .ba-handle {
+    transform: translate(-50%, -50%) scale(1.15);
+}
+
+.ba-label {
+    position: absolute;
+    top: 16px;
+    z-index: 3;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    pointer-events: none;
+}
+
+.ba-label-before { right: 16px; }
+.ba-label-after { left: 16px; }
+
+.ba-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: #fff;
+    padding: 30px 16px 14px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: center;
+    z-index: 3;
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .ba-grid { grid-template-columns: 1fr; }
+}
+
+/* === Quote Calculator Section === */
+.calculator-section {
+    background: var(--dark-2);
+}
+
+.calculator-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(212,175,55,0.15);
+    border-radius: var(--radius);
+    padding: 40px;
+}
+
+.calc-step { margin-bottom: 32px; }
+
+.calc-step-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.calc-step-num {
+    width: 32px;
+    height: 32px;
+    background: var(--gradient-gold);
+    color: var(--dark);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+.calc-options {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.calc-option input { display: none; }
+
+.calc-option-card {
+    background: rgba(255,255,255,0.04);
+    border: 2px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 20px 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.calc-option-card:hover {
+    border-color: rgba(212,175,55,0.4);
+    background: rgba(212,175,55,0.05);
+}
+
+.calc-option input:checked + .calc-option-card {
+    border-color: var(--gold);
+    background: rgba(212,175,55,0.12);
+    box-shadow: 0 0 20px rgba(212,175,55,0.15);
+}
+
+.calc-option-card i {
+    font-size: 1.8rem;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 10px;
+}
+
+.calc-option-card span {
+    display: block;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+}
+
+.calc-option-card small {
+    display: block;
+    color: rgba(255,255,255,0.5);
+    font-size: 0.75rem;
+}
+
+.calc-slider-wrapper {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.calc-slider {
+    width: 100%;
+    -webkit-appearance: none;
+    height: 6px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 3px;
+    outline: none;
+    margin-bottom: 16px;
+}
+
+.calc-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 24px;
+    height: 24px;
+    background: var(--gradient-gold);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(212,175,55,0.4);
+}
+
+.calc-slider::-moz-range-thumb {
+    width: 24px;
+    height: 24px;
+    background: var(--gold);
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+}
+
+.calc-slider-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--gold);
+}
+
+.calc-slider-value span {
+    font-size: 2.5rem;
+}
+
+.calc-checkboxes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.calc-checkbox {
+    cursor: pointer;
+}
+
+.calc-checkbox input { display: none; }
+
+.calc-checkbox span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 14px;
+    background: rgba(255,255,255,0.04);
+    border: 2px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+.calc-checkbox span i {
+    color: var(--gold);
+    font-size: 0.9rem;
+}
+
+.calc-checkbox:hover span {
+    border-color: rgba(212,175,55,0.3);
+}
+
+.calc-checkbox input:checked + span {
+    border-color: var(--gold);
+    background: rgba(212,175,55,0.1);
+}
+
+.calc-result {
+    background: rgba(212,175,55,0.06);
+    border: 1px solid rgba(212,175,55,0.25);
+    border-radius: 16px;
+    padding: 32px;
+    text-align: center;
+    margin-top: 12px;
+}
+
+.calc-result-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.calc-result-header i {
+    color: var(--gold);
+    font-size: 1.5rem;
+}
+
+.calc-result-header h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.calc-price-range {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    direction: ltr;
+}
+
+.calc-price-from, .calc-price-to {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--gold);
+    font-family: var(--font-main);
+}
+
+.calc-price-separator {
+    font-size: 1.5rem;
+    color: rgba(255,255,255,0.4);
+}
+
+.calc-currency {
+    font-size: 1.2rem;
+    color: rgba(255,255,255,0.6);
+    font-weight: 600;
+}
+
+.calc-disclaimer {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .calc-options { grid-template-columns: repeat(2, 1fr); }
+    .calc-checkboxes { grid-template-columns: repeat(2, 1fr); }
+    .calculator-wrapper { padding: 24px 16px; }
+    .calc-price-from, .calc-price-to { font-size: 1.8rem; }
+}
+
+@media (max-width: 480px) {
+    .calc-checkboxes { grid-template-columns: 1fr; }
+}
+
 /* === Service Areas Section === */
 .areas-section {
     background: var(--dark-bg);

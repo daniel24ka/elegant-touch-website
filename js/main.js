@@ -344,6 +344,68 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { passive: true });
     }
 
+    // === Before/After Slider ===
+    document.querySelectorAll('.ba-container').forEach(container => {
+        const slider = container.querySelector('.ba-slider');
+        const beforeWrapper = container.querySelector('.ba-before-wrapper');
+        const handle = container.querySelector('.ba-handle');
+
+        if (slider && beforeWrapper && handle) {
+            slider.addEventListener('input', () => {
+                const val = slider.value;
+                beforeWrapper.style.width = val + '%';
+                handle.style.left = val + '%';
+            });
+        }
+    });
+
+    // === Quote Calculator ===
+    const sizeSlider = document.getElementById('sizeSlider');
+    const sizeValue = document.getElementById('sizeValue');
+    const priceFrom = document.getElementById('priceFrom');
+    const priceTo = document.getElementById('priceTo');
+
+    function calculatePrice() {
+        const type = document.querySelector('input[name="renovationType"]:checked');
+        if (!type) return;
+
+        const size = parseInt(sizeSlider.value);
+        const checkedWorks = document.querySelectorAll('.calc-checkbox input:checked').length;
+
+        const baseRates = { cosmetic: 350, partial: 800, full: 1500, luxury: 2500 };
+        const rate = baseRates[type.value] || 800;
+        const workMultiplier = 1 + (checkedWorks * 0.08);
+
+        const minPrice = Math.round((size * rate * workMultiplier * 0.85) / 1000) * 1000;
+        const maxPrice = Math.round((size * rate * workMultiplier * 1.2) / 1000) * 1000;
+
+        priceFrom.textContent = minPrice.toLocaleString('he-IL');
+        priceTo.textContent = maxPrice.toLocaleString('he-IL');
+
+        document.getElementById('calcResult').style.animation = 'none';
+        document.getElementById('calcResult').offsetHeight;
+        document.getElementById('calcResult').style.animation = 'fadeIn 0.5s ease';
+    }
+
+    if (sizeSlider) {
+        sizeSlider.addEventListener('input', () => {
+            sizeValue.textContent = sizeSlider.value;
+            calculatePrice();
+        });
+
+        document.querySelectorAll('input[name="renovationType"]').forEach(r => {
+            r.addEventListener('change', calculatePrice);
+        });
+
+        document.querySelectorAll('.calc-checkbox input').forEach(cb => {
+            cb.addEventListener('change', calculatePrice);
+        });
+
+        // Initial calculation
+        document.querySelector('input[name="renovationType"][value="partial"]').checked = true;
+        calculatePrice();
+    }
+
     // === Reveal animations on scroll for elements without AOS ===
     const revealElements = document.querySelectorAll('.contact-card, .about-feature');
 

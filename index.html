@@ -284,6 +284,7 @@
                 <li><a href="#gallery" class="nav-link">גלריה</a></li>
                 <li><a href="#testimonials" class="nav-link">המלצות</a></li>
                 <li><a href="#faq" class="nav-link">שאלות נפוצות</a></li>
+                <li><a href="#calculator" class="nav-link">מחשבון מחיר</a></li>
                 <li><a href="#contact" class="nav-link cta-btn">צרו קשר</a></li>
             </ul>
 
@@ -729,6 +730,47 @@
         </div>
     </section>
 
+    <!-- Before/After Section -->
+    <section class="section before-after-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-label center">
+                    <span class="label-line"></span>
+                    <span>לפני ואחרי</span>
+                    <span class="label-line"></span>
+                </div>
+                <h2 class="section-title center">ההבדל <span class="text-gold">מדבר בעד עצמו</span></h2>
+                <p class="section-subtitle">גררו את הסליידר ותראו את השינוי המדהים</p>
+            </div>
+
+            <div class="ba-grid" data-aos="fade-up" data-aos-delay="200">
+                <div class="ba-container">
+                    <div class="ba-label ba-label-before">לפני</div>
+                    <div class="ba-label ba-label-after">אחרי</div>
+                    <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=700&h=450&fit=crop&q=80" alt="מטבח אחרי שיפוץ" class="ba-after">
+                    <div class="ba-before-wrapper">
+                        <img src="https://images.unsplash.com/photo-1556909114-44e3e70034e2?w=700&h=450&fit=crop&q=80" alt="מטבח לפני שיפוץ" class="ba-before">
+                    </div>
+                    <input type="range" class="ba-slider" min="0" max="100" value="50">
+                    <div class="ba-handle"><i class="fas fa-arrows-alt-h"></i></div>
+                    <p class="ba-caption">שיפוץ מטבח - רמת גן</p>
+                </div>
+
+                <div class="ba-container">
+                    <div class="ba-label ba-label-before">לפני</div>
+                    <div class="ba-label ba-label-after">אחרי</div>
+                    <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=700&h=450&fit=crop&q=80" alt="אמבטיה אחרי שיפוץ" class="ba-after">
+                    <div class="ba-before-wrapper">
+                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=700&h=450&fit=crop&q=80" alt="אמבטיה לפני שיפוץ" class="ba-before">
+                    </div>
+                    <input type="range" class="ba-slider" min="0" max="100" value="50">
+                    <div class="ba-handle"><i class="fas fa-arrows-alt-h"></i></div>
+                    <p class="ba-caption">שיפוץ אמבטיה - תל אביב</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Testimonials Section -->
     <section id="testimonials" class="section testimonials-section">
         <div class="container">
@@ -985,6 +1027,101 @@
                 <div class="area-item"><i class="fas fa-map-marker-alt"></i><h3>שיפוצים במודיעין</h3><p>שיפוצים במודיעין-מכבים-רעות והסביבה</p></div>
                 <div class="area-item"><i class="fas fa-map-marker-alt"></i><h3>שיפוצים ברחובות</h3><p>שיפוץ דירות ברחובות ונס ציונה</p></div>
                 <div class="area-item"><i class="fas fa-map-marker-alt"></i><h3>שיפוצים בנתניה</h3><p>קבלן שיפוצים מקצועי בנתניה והשרון</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Calculator Section -->
+    <section id="calculator" class="section calculator-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-label center">
+                    <span class="label-line"></span>
+                    <span>מחשבון הצעת מחיר</span>
+                    <span class="label-line"></span>
+                </div>
+                <h2 class="section-title center">קבלו הערכת מחיר <span class="text-gold">מיידית</span></h2>
+                <p class="section-subtitle">מלאו את הפרטים וקבלו הערכת עלות ראשונית לפרויקט שלכם</p>
+            </div>
+
+            <div class="calculator-wrapper" data-aos="fade-up" data-aos-delay="200">
+                <div class="calc-step active" id="calcStep1">
+                    <h3 class="calc-step-title"><span class="calc-step-num">1</span> מהו סוג השיפוץ?</h3>
+                    <div class="calc-options">
+                        <label class="calc-option">
+                            <input type="radio" name="renovationType" value="cosmetic">
+                            <div class="calc-option-card">
+                                <i class="fas fa-paint-roller"></i>
+                                <span>שיפוץ קוסמטי</span>
+                                <small>צביעה, ריצוף חלקי, תיקונים</small>
+                            </div>
+                        </label>
+                        <label class="calc-option">
+                            <input type="radio" name="renovationType" value="partial">
+                            <div class="calc-option-card">
+                                <i class="fas fa-tools"></i>
+                                <span>שיפוץ חלקי</span>
+                                <small>מטבח, אמבטיה, או חדר ספציפי</small>
+                            </div>
+                        </label>
+                        <label class="calc-option">
+                            <input type="radio" name="renovationType" value="full">
+                            <div class="calc-option-card">
+                                <i class="fas fa-home"></i>
+                                <span>שיפוץ כללי</span>
+                                <small>שיפוץ מקיף של כל הדירה/בית</small>
+                            </div>
+                        </label>
+                        <label class="calc-option">
+                            <input type="radio" name="renovationType" value="luxury">
+                            <div class="calc-option-card">
+                                <i class="fas fa-gem"></i>
+                                <span>שיפוץ יוקרתי</span>
+                                <small>חומרים פרימיום + עיצוב פנים</small>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="calc-step" id="calcStep2">
+                    <h3 class="calc-step-title"><span class="calc-step-num">2</span> מה גודל הנכס?</h3>
+                    <div class="calc-slider-wrapper">
+                        <input type="range" id="sizeSlider" min="30" max="300" value="80" class="calc-slider">
+                        <div class="calc-slider-value"><span id="sizeValue">80</span> מ"ר</div>
+                    </div>
+                </div>
+
+                <div class="calc-step" id="calcStep3">
+                    <h3 class="calc-step-title"><span class="calc-step-num">3</span> אילו עבודות נדרשות?</h3>
+                    <div class="calc-checkboxes">
+                        <label class="calc-checkbox"><input type="checkbox" value="electric" checked><span><i class="fas fa-bolt"></i> חשמל</span></label>
+                        <label class="calc-checkbox"><input type="checkbox" value="plumbing" checked><span><i class="fas fa-faucet"></i> אינסטלציה</span></label>
+                        <label class="calc-checkbox"><input type="checkbox" value="tiling"><span><i class="fas fa-th-large"></i> ריצוף</span></label>
+                        <label class="calc-checkbox"><input type="checkbox" value="painting" checked><span><i class="fas fa-fill-drip"></i> צביעה</span></label>
+                        <label class="calc-checkbox"><input type="checkbox" value="kitchen"><span><i class="fas fa-utensils"></i> מטבח</span></label>
+                        <label class="calc-checkbox"><input type="checkbox" value="bathroom"><span><i class="fas fa-bath"></i> אמבטיה</span></label>
+                        <label class="calc-checkbox"><input type="checkbox" value="demolition"><span><i class="fas fa-hammer"></i> הריסות</span></label>
+                        <label class="calc-checkbox"><input type="checkbox" value="design"><span><i class="fas fa-drafting-compass"></i> עיצוב פנים</span></label>
+                    </div>
+                </div>
+
+                <div class="calc-result" id="calcResult">
+                    <div class="calc-result-header">
+                        <i class="fas fa-calculator"></i>
+                        <h3>הערכת עלות משוערת</h3>
+                    </div>
+                    <div class="calc-price-range">
+                        <span class="calc-price-from" id="priceFrom">0</span>
+                        <span class="calc-price-separator">-</span>
+                        <span class="calc-price-to" id="priceTo">0</span>
+                        <span class="calc-currency">₪</span>
+                    </div>
+                    <p class="calc-disclaimer">* הערכה ראשונית בלבד. המחיר הסופי ייקבע בפגישת ייעוץ.</p>
+                    <a href="#contact" class="btn btn-primary">
+                        <span>קבלו הצעת מחיר מדויקת</span>
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
