@@ -292,23 +292,68 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // === Contact Form ===
+    // === Contact Form (Formspree) ===
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
+        contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
 
             const formData = new FormData(contactForm);
             const name = formData.get('name');
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerHTML;
 
-            // Show success message
-            contactForm.innerHTML = `
-                <div class="form-success">
-                    <i class="fas fa-check-circle"></i>
-                    <h3>תודה ${name}!</h3>
-                    <p>הפנייה שלך התקבלה בהצלחה. ניצור איתך קשר בהקדם האפשרי.</p>
-                </div>
-            `;
+            // Show loading state
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> <span>שולח...</span>';
+            submitBtn.disabled = true;
+
+            try {
+                const response = await fetch('https://formspree.io/f/FORM_ID_HERE', {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (response.ok) {
+                    contactForm.innerHTML = `
+                        <div class="form-success">
+                            <i class="fas fa-check-circle"></i>
+                            <h3>תודה ${name}!</h3>
+                            <p>הפנייה שלך התקבלה בהצלחה. ניצור איתך קשר בהקדם האפשרי.</p>
+                        </div>
+                    `;
+                } else {
+                    // Fallback - send via WhatsApp
+                    const phone = formData.get('phone');
+                    const service = formData.get('service');
+                    const message = formData.get('message');
+                    const waText = `שלום, שמי ${name}. טלפון: ${phone}. שירות: ${service}. ${message || ''}`;
+                    window.open(`https://wa.me/972534295336?text=${encodeURIComponent(waText)}`, '_blank');
+
+                    contactForm.innerHTML = `
+                        <div class="form-success">
+                            <i class="fas fa-check-circle"></i>
+                            <h3>תודה ${name}!</h3>
+                            <p>הפנייה נשלחה דרך WhatsApp. ניצור איתך קשר בהקדם.</p>
+                        </div>
+                    `;
+                }
+            } catch (err) {
+                // Fallback - send via WhatsApp
+                const phone = formData.get('phone');
+                const service = formData.get('service');
+                const message = formData.get('message');
+                const waText = `שלום, שמי ${name}. טלפון: ${phone}. שירות: ${service}. ${message || ''}`;
+                window.open(`https://wa.me/972534295336?text=${encodeURIComponent(waText)}`, '_blank');
+
+                contactForm.innerHTML = `
+                    <div class="form-success">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>תודה ${name}!</h3>
+                        <p>הפנייה נשלחה דרך WhatsApp. ניצור איתך קשר בהקדם.</p>
+                    </div>
+                `;
+            }
         });
     }
 
