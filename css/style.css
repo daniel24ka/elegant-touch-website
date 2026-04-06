@@ -1751,6 +1751,58 @@ img { max-width: 100%; display: block; }
     .contact-form-wrapper { padding: 24px; }
 }
 
+/* === Trust Bar === */
+.trust-bar {
+    background: linear-gradient(135deg, rgba(201,169,110,0.08), rgba(201,169,110,0.03));
+    border-top: 1px solid rgba(212,175,55,0.15);
+    border-bottom: 1px solid rgba(212,175,55,0.15);
+    padding: 28px 0;
+    overflow: hidden;
+}
+
+.trust-items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.trust-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+}
+
+.trust-item i {
+    color: var(--gold);
+    font-size: 1.2rem;
+}
+
+.trust-item span {
+    color: rgba(255,255,255,0.8);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+@media (max-width: 992px) {
+    .trust-items { justify-content: center; }
+}
+
+@media (max-width: 768px) {
+    .trust-items {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+    .trust-item { justify-content: center; }
+}
+
+@media (max-width: 480px) {
+    .trust-items { grid-template-columns: 1fr; }
+}
+
 /* === Before/After Slider === */
 .before-after-section {
     background: var(--dark-3);
