@@ -417,12 +417,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const size = parseInt(sizeSlider.value);
         const checkedWorks = document.querySelectorAll('.calc-checkbox input:checked').length;
 
-        const baseRates = { cosmetic: 350, partial: 800, full: 1500, luxury: 2500 };
-        const rate = baseRates[type.value] || 800;
-        const workMultiplier = 1 + (checkedWorks * 0.08);
+        const baseRates = { cosmetic: 200, partial: 500, full: 1000, luxury: 1800 };
+        const rate = baseRates[type.value] || 500;
+        const workMultiplier = 1 + (checkedWorks * 0.06);
 
         const minPrice = Math.round((size * rate * workMultiplier * 0.85) / 1000) * 1000;
-        const maxPrice = Math.round((size * rate * workMultiplier * 1.2) / 1000) * 1000;
+        const maxPrice = Math.round((size * rate * workMultiplier * 1.15) / 1000) * 1000;
 
         priceFrom.textContent = minPrice.toLocaleString('he-IL');
         priceTo.textContent = maxPrice.toLocaleString('he-IL');
