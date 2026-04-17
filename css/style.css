@@ -2229,6 +2229,61 @@ img { max-width: 100%; display: block; }
     .areas-grid { grid-template-columns: 1fr; }
 }
 
+/* === Hero Stat Text Variant (A-Z) === */
+.stat-number.stat-text {
+    font-family: var(--font-accent);
+    font-style: italic;
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* === Services Footer CTA === */
+.services-footer-cta {
+    text-align: center;
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(201, 169, 110, 0.12);
+}
+
+.services-footer-note {
+    color: var(--gray-light);
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.services-footer-note strong {
+    color: var(--gold);
+    font-weight: 700;
+}
+
+/* === Service Card CTA Refinement === */
+.service-link {
+    padding: 6px 0;
+    border-bottom: 1px solid transparent;
+}
+
+.service-card:hover .service-link {
+    border-bottom-color: rgba(201, 169, 110, 0.4);
+}
+
+.service-card:hover .service-link i {
+    transform: translateX(-4px);
+}
+
+.service-link i {
+    transition: transform 0.3s ease;
+}
+
+/* === Hero Stats — tighter mobile === */
+@media (max-width: 480px) {
+    .stat-number.stat-text { font-size: 1.6rem; }
+    .stat-label { font-size: 0.75rem; }
+}
+
 /* === Print Styles === */
 @media print {
     .header, .whatsapp-float, .back-to-top, .hero-bg-particles,
