@@ -124,14 +124,74 @@
         <xhtml:link rel="alternate" hreflang="he" href="https://elegant-touch.co.il/cities/herzliya.html"/>
     </url>
 
-    <!-- Secondary pages -->
+    <!-- Blog hub -->
     <url>
         <loc>https://elegant-touch.co.il/blog.html</loc>
         <lastmod>2026-04-17</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
+        <priority>0.85</priority>
         <xhtml:link rel="alternate" hreflang="he" href="https://elegant-touch.co.il/blog.html"/>
     </url>
+
+    <!-- Blog articles -->
+    <url>
+        <loc>https://elegant-touch.co.il/blog/renovation-cost-guide.html</loc>
+        <lastmod>2026-04-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="he" href="https://elegant-touch.co.il/blog/renovation-cost-guide.html"/>
+    </url>
+    <url>
+        <loc>https://elegant-touch.co.il/blog/kitchen-cost-guide.html</loc>
+        <lastmod>2026-04-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="he" href="https://elegant-touch.co.il/blog/kitchen-cost-guide.html"/>
+    </url>
+    <url>
+        <loc>https://elegant-touch.co.il/blog/bathroom-cost-guide.html</loc>
+        <lastmod>2026-04-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="he" href="https://elegant-touch.co.il/blog/bathroom-cost-guide.html"/>
+    </url>
+    <url>
+        <loc>https://elegant-touch.co.il/blog/how-to-choose-contractor.html</loc>
+        <lastmod>2026-04-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="he" href="https://elegant-touch.co.il/blog/how-to-choose-contractor.html"/>
+    </url>
+    <url>
+        <loc>https://elegant-touch.co.il/blog/common-mistakes.html</loc>
+        <lastmod>2026-04-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.75</priority>
+        <xhtml:link rel="alternate" hreflang="he" href="https://elegant-touch.co.il/blog/common-mistakes.html"/>
+    </url>
+    <url>
+        <loc>https://elegant-touch.co.il/blog/renovation-timeline.html</loc>
+        <lastmod>2026-04-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.75</priority>
+        <xhtml:link rel="alternate" hreflang="he" href="https://elegant-touch.co.il/blog/renovation-timeline.html"/>
+    </url>
+    <url>
+        <loc>https://elegant-touch.co.il/blog/before-after-guide.html</loc>
+        <lastmod>2026-04-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.75</priority>
+        <xhtml:link rel="alternate" hreflang="he" href="https://elegant-touch.co.il/blog/before-after-guide.html"/>
+    </url>
+    <url>
+        <loc>https://elegant-touch.co.il/blog/investment-renovation.html</loc>
+        <lastmod>2026-04-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.75</priority>
+        <xhtml:link rel="alternate" hreflang="he" href="https://elegant-touch.co.il/blog/investment-renovation.html"/>
+    </url>
+
+    <!-- Secondary pages -->
     <url>
         <loc>https://elegant-touch.co.il/subcontractor.html</loc>
         <lastmod>2026-04-17</lastmod>
