@@ -1,27 +1,143 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+    <!-- Homepage -->
     <url>
         <loc>https://elegant-touch.co.il/</loc>
-        <lastmod>2026-04-16</lastmod>
+        <lastmod>2026-04-17</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="he" href="https://elegant-touch.co.il/"/>
+    </url>
+
+    <!-- Services hub -->
+    <url>
+        <loc>https://elegant-touch.co.il/services.html</loc>
+        <lastmod>2026-04-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.95</priority>
+        <xhtml:link rel="alternate" hreflang="he" href="https://elegant-touch.co.il/services.html"/>
+    </url>
+
+    <!-- Areas hub -->
+    <url>
+        <loc>https://elegant-touch.co.il/areas.html</loc>
+        <lastmod>2026-04-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="he" href="https://elegant-touch.co.il/areas.html"/>
+    </url>
+
+    <!-- Individual service pages -->
+    <url>
+        <loc>https://elegant-touch.co.il/services/apartment-renovation.html</loc>
+        <lastmod>2026-04-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="he" href="https://elegant-touch.co.il/services/apartment-renovation.html"/>
+    </url>
+    <url>
+        <loc>https://elegant-touch.co.il/services/kitchen-renovation.html</loc>
+        <lastmod>2026-04-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="he" href="https://elegant-touch.co.il/services/kitchen-renovation.html"/>
+    </url>
+    <url>
+        <loc>https://elegant-touch.co.il/services/bathroom-renovation.html</loc>
+        <lastmod>2026-04-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="he" href="https://elegant-touch.co.il/services/bathroom-renovation.html"/>
+    </url>
+    <url>
+        <loc>https://elegant-touch.co.il/services/general-renovation.html</loc>
+        <lastmod>2026-04-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.85</priority>
+        <xhtml:link rel="alternate" hreflang="he" href="https://elegant-touch.co.il/services/general-renovation.html"/>
+    </url>
+    <url>
+        <loc>https://elegant-touch.co.il/services/interior-design.html</loc>
+        <lastmod>2026-04-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.85</priority>
+        <xhtml:link rel="alternate" hreflang="he" href="https://elegant-touch.co.il/services/interior-design.html"/>
+    </url>
+    <url>
+        <loc>https://elegant-touch.co.il/services/flooring-and-cladding.html</loc>
+        <lastmod>2026-04-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="he" href="https://elegant-touch.co.il/services/flooring-and-cladding.html"/>
+    </url>
+    <url>
+        <loc>https://elegant-touch.co.il/services/paint-and-spackle.html</loc>
+        <lastmod>2026-04-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="he" href="https://elegant-touch.co.il/services/paint-and-spackle.html"/>
+    </url>
+    <url>
+        <loc>https://elegant-touch.co.il/services/drywall.html</loc>
+        <lastmod>2026-04-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="he" href="https://elegant-touch.co.il/services/drywall.html"/>
+    </url>
+
+    <!-- City landing pages -->
+    <url>
+        <loc>https://elegant-touch.co.il/cities/tel-aviv.html</loc>
+        <lastmod>2026-04-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="he" href="https://elegant-touch.co.il/cities/tel-aviv.html"/>
+    </url>
+    <url>
+        <loc>https://elegant-touch.co.il/cities/ramat-gan.html</loc>
+        <lastmod>2026-04-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.85</priority>
+        <xhtml:link rel="alternate" hreflang="he" href="https://elegant-touch.co.il/cities/ramat-gan.html"/>
+    </url>
+    <url>
+        <loc>https://elegant-touch.co.il/cities/rishon-lezion.html</loc>
+        <lastmod>2026-04-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.85</priority>
+        <xhtml:link rel="alternate" hreflang="he" href="https://elegant-touch.co.il/cities/rishon-lezion.html"/>
+    </url>
+    <url>
+        <loc>https://elegant-touch.co.il/cities/petah-tikva.html</loc>
+        <lastmod>2026-04-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.85</priority>
+        <xhtml:link rel="alternate" hreflang="he" href="https://elegant-touch.co.il/cities/petah-tikva.html"/>
+    </url>
+    <url>
+        <loc>https://elegant-touch.co.il/cities/herzliya.html</loc>
+        <lastmod>2026-04-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.85</priority>
+        <xhtml:link rel="alternate" hreflang="he" href="https://elegant-touch.co.il/cities/herzliya.html"/>
+    </url>
+
+    <!-- Secondary pages -->
+    <url>
+        <loc>https://elegant-touch.co.il/blog.html</loc>
+        <lastmod>2026-04-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="he" href="https://elegant-touch.co.il/blog.html"/>
     </url>
     <url>
         <loc>https://elegant-touch.co.il/subcontractor.html</loc>
-        <lastmod>2026-04-16</lastmod>
+        <lastmod>2026-04-17</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
+        <priority>0.6</priority>
+        <xhtml:link rel="alternate" hreflang="he" href="https://elegant-touch.co.il/subcontractor.html"/>
     </url>
-    <url>
-        <loc>https://elegant-touch.co.il/blog.html</loc>
-        <lastmod>2026-04-16</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://elegant-touch.co.il/areas.html</loc>
-        <lastmod>2026-04-16</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
+
 </urlset>

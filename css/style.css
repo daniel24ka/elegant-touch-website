@@ -2240,6 +2240,9 @@ img { max-width: 100%; display: block; }
     padding: 24px 20px;
     text-align: center;
     transition: all 0.3s ease;
+    display: block;
+    text-decoration: none;
+    color: inherit;
 }
 
 .area-item:hover {
@@ -2247,6 +2250,8 @@ img { max-width: 100%; display: block; }
     border-color: rgba(212, 175, 55, 0.4);
     transform: translateY(-4px);
 }
+
+a.area-item:hover h3 { color: var(--gold); }
 
 .area-item i {
     color: var(--gold);
