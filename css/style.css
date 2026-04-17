@@ -3,26 +3,79 @@
    Advanced CSS with Animations & Effects
    ============================================ */
 
-/* === CSS Variables === */
+/* === CSS Variables / Design Tokens === */
 :root {
+    /* Brand colors */
     --gold: #c9a96e;
     --gold-light: #f0d48a;
     --gold-dark: #a0784c;
+    --gold-soft: rgba(201, 169, 110, 0.08);
+    --gold-border: rgba(201, 169, 110, 0.18);
+
+    /* Surface / background scale */
     --dark: #0a0a0a;
     --dark-2: #111111;
-    --dark-3: #1a1a1a;
-    --dark-4: #222222;
+    --dark-3: #161616;
+    --dark-4: #1c1c1c;
+
+    /* Neutral text scale */
     --gray: #888888;
     --gray-light: #aaaaaa;
     --white: #ffffff;
     --white-soft: #f5f5f5;
+    --white-muted: rgba(255, 255, 255, 0.78);
+    --white-subtle: rgba(255, 255, 255, 0.55);
+    --border-subtle: rgba(255, 255, 255, 0.06);
+    --border-default: rgba(255, 255, 255, 0.1);
+
+    /* Gradients */
     --gradient-gold: linear-gradient(135deg, var(--gold), var(--gold-light), var(--gold));
     --gradient-dark: linear-gradient(180deg, var(--dark), var(--dark-2));
-    --shadow-gold: 0 0 30px rgba(201, 169, 110, 0.15);
-    --shadow-card: 0 10px 40px rgba(0, 0, 0, 0.3);
-    --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Typography scale */
+    --text-xs: 0.75rem;
+    --text-sm: 0.85rem;
+    --text-base: 0.95rem;
+    --text-md: 1.05rem;
+    --text-lg: 1.15rem;
+    --text-xl: 1.5rem;
+    --text-2xl: 1.8rem;
+    --text-3xl: clamp(2rem, 4vw, 3rem);
+    --text-4xl: clamp(2.5rem, 6vw, 4.25rem);
+
+    /* Spacing scale */
+    --space-xs: 8px;
+    --space-sm: 16px;
+    --space-md: 24px;
+    --space-lg: 40px;
+    --space-xl: 60px;
+    --space-2xl: 80px;
+    --space-3xl: 110px;
+
+    /* Radii */
     --radius: 16px;
     --radius-sm: 8px;
+    --radius-lg: 24px;
+    --radius-pill: 50px;
+
+    /* Elevation */
+    --shadow-gold: 0 0 30px rgba(201, 169, 110, 0.15);
+    --shadow-card: 0 10px 40px rgba(0, 0, 0, 0.3);
+    --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.25);
+    --shadow-md: 0 8px 28px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.4);
+    --shadow-gold-sm: 0 4px 18px rgba(201, 169, 110, 0.12);
+    --shadow-gold-md: 0 12px 36px rgba(201, 169, 110, 0.22);
+
+    /* Motion */
+    --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+    --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+    --duration-fast: 200ms;
+    --duration-base: 320ms;
+    --duration-slow: 520ms;
+    --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Fonts */
     --font-main: 'Heebo', sans-serif;
     --font-accent: 'Playfair Display', serif;
 }
@@ -2170,7 +2223,7 @@ img { max-width: 100%; display: block; }
 
 /* === Service Areas Section === */
 .areas-section {
-    background: var(--dark-bg);
+    background: var(--dark-3);
 }
 
 .areas-grid {
@@ -2229,6 +2282,11 @@ img { max-width: 100%; display: block; }
     .areas-grid { grid-template-columns: 1fr; }
 }
 
+/* ============================================
+   DESIGN SYSTEM v2 — Premium Cohesion Layer
+   (Loaded after base styles; refines specificity)
+   ============================================ */
+
 /* === Hero Stat Text Variant (A-Z) === */
 .stat-number.stat-text {
     font-family: var(--font-accent);
@@ -2241,18 +2299,183 @@ img { max-width: 100%; display: block; }
     background-clip: text;
 }
 
+/* === Section Rhythm — subtle boundary transitions === */
+.section + .section,
+.trust-bar + .section {
+    position: relative;
+}
+
+.about-section,
+.process-section,
+.testimonials-section,
+.calculator-section,
+.cta-section {
+    background: var(--dark-2);
+}
+
+.services-section,
+.gallery-section,
+.faq-section,
+.contact-section {
+    background: var(--dark);
+}
+
+.before-after-section {
+    background: var(--dark-3);
+}
+
+/* === Section Header — tighter premium typography === */
+.section-header {
+    margin-bottom: var(--space-xl);
+}
+
+.section-label {
+    font-size: var(--text-xs);
+    letter-spacing: 4px;
+    font-weight: 600;
+    opacity: 0.95;
+}
+
+.section-label .label-line {
+    width: 32px;
+    opacity: 0.7;
+}
+
+.section-title {
+    font-family: var(--font-main);
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 18px;
+}
+
+.section-subtitle {
+    font-size: var(--text-md);
+    line-height: 1.75;
+    color: var(--white-subtle);
+}
+
+/* === Trust Bar — premium strip === */
+.trust-bar {
+    padding: 24px 0;
+    background: linear-gradient(180deg, rgba(201,169,110,0.05), rgba(201,169,110,0.02));
+    border-top: 1px solid rgba(201, 169, 110, 0.12);
+    border-bottom: 1px solid rgba(201, 169, 110, 0.12);
+}
+
+.trust-item i {
+    font-size: 1rem;
+    opacity: 0.92;
+}
+
+.trust-item span {
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--white-muted);
+    letter-spacing: 0.2px;
+}
+
+/* === Buttons — unified system === */
+.btn {
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    transition: transform var(--duration-base) var(--ease-out),
+                box-shadow var(--duration-base) var(--ease-out),
+                background var(--duration-base) var(--ease-out),
+                border-color var(--duration-base) var(--ease-out),
+                color var(--duration-base) var(--ease-out);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-gold-md);
+}
+
+.btn-secondary:hover {
+    transform: translateY(-2px);
+}
+
+.btn-whatsapp:hover {
+    transform: translateY(-2px);
+}
+
+/* New: subtle tertiary button variant */
+.btn-subtle {
+    background: transparent;
+    color: var(--white-muted);
+    border: 1px solid var(--border-default);
+}
+
+.btn-subtle:hover {
+    color: var(--gold);
+    border-color: var(--gold);
+    background: var(--gold-soft);
+}
+
+/* === Service Card — unified heights & refined hover === */
+.service-card {
+    display: flex;
+    flex-direction: column;
+    padding: 36px 26px 32px;
+    min-height: 340px;
+    transition: transform var(--duration-base) var(--ease-out),
+                border-color var(--duration-base) var(--ease-out),
+                box-shadow var(--duration-base) var(--ease-out);
+}
+
+.service-card h3 {
+    margin: 0 0 12px;
+    font-size: 1.18rem;
+    letter-spacing: -0.1px;
+}
+
+.service-card p {
+    flex: 1;
+    margin: 0 0 22px;
+    font-size: 0.9rem;
+    line-height: 1.75;
+    color: var(--white-subtle);
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-gold-sm);
+    border-color: var(--gold-border);
+}
+
+/* === Service Card CTA — consistent position & soft underline === */
+.service-link {
+    margin-top: auto;
+    padding: 6px 0;
+    align-self: center;
+    border-bottom: 1px solid transparent;
+    transition: gap var(--duration-base) var(--ease-out),
+                border-bottom-color var(--duration-base) var(--ease-out);
+}
+
+.service-card:hover .service-link {
+    border-bottom-color: rgba(201, 169, 110, 0.4);
+}
+
+.service-link i {
+    transition: transform var(--duration-base) var(--ease-out);
+}
+
+.service-card:hover .service-link i {
+    transform: translateX(-4px);
+}
+
 /* === Services Footer CTA === */
 .services-footer-cta {
     text-align: center;
-    margin-top: 60px;
-    padding-top: 40px;
-    border-top: 1px solid rgba(201, 169, 110, 0.12);
+    margin-top: var(--space-xl);
+    padding-top: var(--space-lg);
+    border-top: 1px solid rgba(201, 169, 110, 0.1);
 }
 
 .services-footer-note {
     color: var(--gray-light);
-    font-size: 1rem;
-    margin-bottom: 20px;
+    font-size: var(--text-base);
+    margin-bottom: 18px;
 }
 
 .services-footer-note strong {
@@ -2260,28 +2483,191 @@ img { max-width: 100%; display: block; }
     font-weight: 700;
 }
 
-/* === Service Card CTA Refinement === */
-.service-link {
-    padding: 6px 0;
-    border-bottom: 1px solid transparent;
+/* === About feature cards — refined hierarchy === */
+.about-feature h4 {
+    font-size: 1rem;
+    margin-bottom: 6px;
+    letter-spacing: -0.1px;
 }
 
-.service-card:hover .service-link {
-    border-bottom-color: rgba(201, 169, 110, 0.4);
+.about-feature p {
+    font-size: 0.85rem;
+    line-height: 1.6;
 }
 
-.service-card:hover .service-link i {
+/* === Process step — smoother elevation === */
+.step-content {
+    transition: transform var(--duration-base) var(--ease-out),
+                border-color var(--duration-base) var(--ease-out),
+                box-shadow var(--duration-base) var(--ease-out);
+}
+
+.step-content:hover {
     transform: translateX(-4px);
+    box-shadow: var(--shadow-sm);
 }
 
-.service-link i {
-    transition: transform 0.3s ease;
+/* === Testimonial card — refined typography === */
+.testimonial-text {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: var(--white-soft);
 }
 
-/* === Hero Stats — tighter mobile === */
+/* === FAQ — softer border rhythm === */
+.faq-item {
+    border-bottom: 1px solid var(--border-subtle);
+    transition: background var(--duration-base) var(--ease-out);
+}
+
+.faq-question {
+    padding: 22px 4px;
+    font-size: 1rem;
+}
+
+.faq-item:hover {
+    background: rgba(255, 255, 255, 0.012);
+}
+
+/* === CTA Section — cleaner hierarchy === */
+.cta-content h2 {
+    letter-spacing: -0.5px;
+    margin-bottom: 14px;
+}
+
+.cta-content p {
+    max-width: 580px;
+    margin: 0 auto 36px;
+    font-size: var(--text-md);
+}
+
+/* === Form refinements === */
+.contact-form-wrapper {
+    padding: 36px;
+}
+
+/* === Area items — subtler panels === */
+.area-item {
+    transition: transform var(--duration-base) var(--ease-out),
+                border-color var(--duration-base) var(--ease-out),
+                background var(--duration-base) var(--ease-out);
+}
+
+/* ============================================
+   MOBILE POLISH — premium compact layout
+   ============================================ */
+
+@media (max-width: 768px) {
+    .section { padding: 72px 0; }
+
+    .section-header { margin-bottom: 40px; }
+
+    /* Hero mobile — tighter, more readable */
+    .hero h1 {
+        font-size: clamp(1.9rem, 8vw, 2.6rem);
+        line-height: 1.25;
+        margin-bottom: 18px;
+    }
+
+    .hero-subtitle {
+        font-size: 0.98rem;
+        line-height: 1.7;
+        margin-bottom: 32px;
+    }
+
+    .hero-buttons {
+        gap: 12px;
+        margin-bottom: 44px;
+    }
+
+    .hero-stats {
+        gap: 24px;
+    }
+
+    .stat-number { font-size: 2rem; }
+    .stat-plus, .stat-percent { font-size: 1.3rem; }
+
+    /* Trust bar — mobile tighter */
+    .trust-bar {
+        padding: 18px 0;
+    }
+
+    .trust-item span {
+        font-size: 0.82rem;
+    }
+
+    /* Services cards — mobile */
+    .services-grid { gap: 16px; }
+
+    .service-card {
+        padding: 32px 22px 26px;
+        min-height: auto;
+    }
+
+    .service-card h3 { font-size: 1.1rem; }
+    .service-card p { font-size: 0.88rem; margin-bottom: 18px; }
+
+    /* About section — tighter */
+    .about-grid { gap: 36px; }
+    .about-features { gap: 16px; }
+
+    /* Process timeline — tighter */
+    .process-step { margin-bottom: 36px; gap: 18px; }
+    .step-content { padding: 22px 20px; }
+
+    /* Testimonials */
+    .testimonial-card { padding: 32px 22px; }
+    .testimonial-text { font-size: 0.98rem; line-height: 1.8; }
+
+    /* FAQ */
+    .faq-question { padding: 18px 0; font-size: 0.95rem; }
+
+    /* CTA section */
+    .cta-section { padding: 72px 0; }
+    .cta-content p { font-size: 0.98rem; margin-bottom: 28px; }
+
+    /* Contact form */
+    .contact-form-wrapper { padding: 26px 22px; }
+
+    /* Services footer cta */
+    .services-footer-cta { margin-top: 40px; padding-top: 28px; }
+
+    /* Calculator */
+    .calculator-wrapper { padding: 28px 18px; }
+    .calc-step-title { font-size: 1.05rem; }
+}
+
 @media (max-width: 480px) {
+    .section { padding: 60px 0; }
+
+    .hero-badge { font-size: 0.78rem; padding: 6px 16px; margin-bottom: 22px; }
+    .hero-subtitle { font-size: 0.92rem; }
+
+    .hero-buttons .btn { width: 100%; justify-content: center; }
+
+    .stat-number { font-size: 1.8rem; }
     .stat-number.stat-text { font-size: 1.6rem; }
-    .stat-label { font-size: 0.75rem; }
+    .stat-label { font-size: 0.75rem; letter-spacing: 0.2px; }
+    .stat-divider { display: none; }
+
+    /* Services footer CTA on small */
+    .services-footer-cta .btn-large { padding: 14px 24px; font-size: 0.95rem; }
+
+    /* Back-to-top + whatsapp: avoid overlapping */
+    .whatsapp-float { bottom: 22px; left: 22px; width: 54px; height: 54px; font-size: 1.5rem; }
+    .back-to-top { bottom: 22px; right: 22px; width: 44px; height: 44px; font-size: 1rem; }
+}
+
+/* ============================================
+   MOTION POLISH — reduced motion preference
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }
 
 /* === Print Styles === */

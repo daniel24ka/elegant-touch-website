@@ -16,11 +16,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // === Initialize AOS ===
     AOS.init({
-        duration: 800,
-        easing: 'ease-out-cubic',
+        duration: 700,
+        easing: 'ease-out-quart',
         once: true,
-        offset: 80,
-        disable: 'mobile'
+        offset: 60,
+        delay: 0,
+        anchorPlacement: 'top-bottom',
+        disable: () => window.innerWidth < 768
     });
 
     // === Cursor Glow Effect ===
