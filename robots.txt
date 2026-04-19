@@ -1,15 +1,5 @@
-# robots.txt - Elegant Touch
-# https://elegant-touch.co.il
-
 User-agent: *
 Allow: /
+Disallow: /google42212c3f5ecb351d.html
 
-# Explicitly allow main sections
-Allow: /services/
-Allow: /cities/
-Allow: /images/
-Allow: /css/
-Allow: /js/
-
-# Sitemap reference
 Sitemap: https://elegant-touch.co.il/sitemap.xml
